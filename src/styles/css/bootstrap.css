@@ -3230,7 +3230,6 @@ textarea.form-control.is-invalid {
 .btn-check:focus+.btn,
 .btn:focus {
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
 .btn:disabled,
@@ -3257,7 +3256,6 @@ fieldset:disabled .btn {
   color: #fff;
   background-color: #0b5ed7;
   border-color: #0a58ca;
-  box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);
 }
 
 .btn-check:checked+.btn-primary,

@@ -3,10 +3,6 @@
   text-align: center;
 }
 
-.dashboard-card {
-  border: 1px solid red;
-}
-
 .dashboard-card__note-body,
 .dashboard-card__note-title,
 .dashboard-card__note-date {

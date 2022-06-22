@@ -3,6 +3,7 @@ import DeleteBtn from "./note-delete-btn.svg";
 import BookmarkBtn from "./note-bookmark-btn.svg";
 
 const Dashboard = ({ notes, formattedData, deleteNoteHandler }) => {
+  document.title = "Notes | Dashboard";
   return (
     <div className="container">
       <h1 className="dashboard-title mb-5">Dashboard</h1>

@@ -8,6 +8,7 @@ const AddNotes = ({
   status,
   titleInputLen,
 }) => {
+  document.title = "Notes | Add Page";
   const alertHandler = () => {
     if (status === 1)
       return (

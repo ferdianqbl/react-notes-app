@@ -14,7 +14,10 @@ const Notes = () => {
   const [bookmarks, setBookmarks] = useState(
     notes.filter((note) => note.archived === true)
   );
-  const [filteredNotes, setFilteredNotes] = useState([]);
+  const [notBookmarksFilteredNotes, setNotBookmarksFilteredNotes] = useState(
+    []
+  );
+  const [bookmarksFilteredNotes, setBookmarksFilteredNotes] = useState([]);
   const [search, setSearch] = useState("");
   const [titleInput, setTitleInput] = useState("");
   const [bodyInput, setBodyInput] = useState("");
@@ -31,6 +34,7 @@ const Notes = () => {
         createdAt: Date.now(),
       };
       setNotBookmarks([...notBookmarks, newNote]);
+      setNotBookmarksFilteredNotes([]);
       setStatus(1);
     } else setStatus(-1);
 
@@ -50,9 +54,10 @@ const Notes = () => {
   const deleteNoteHandler = (id, isArchived) => {
     if (isArchived) {
       setBookmarks(bookmarks.filter((note) => note.id !== id));
+      setBookmarksFilteredNotes([]);
     } else {
       setNotBookmarks(notBookmarks.filter((note) => note.id !== id));
-      setFilteredNotes([]);
+      setNotBookmarksFilteredNotes([]);
     }
   };
 
@@ -70,16 +75,30 @@ const Notes = () => {
       setNotBookmarks(notBookmarks.filter((note) => note.id !== id));
       setBookmarks([...bookmarks, note]);
     }
+    setBookmarksFilteredNotes([]);
+    setNotBookmarksFilteredNotes([]);
   };
 
-  const searchHandler = (e) => {
+  const notBookmarkSearchHandler = (e) => {
     setSearch(e.target.value);
+
     const filteredNotes = notBookmarks.filter((note) => {
       const title = note.title.toLowerCase();
       return new RegExp(e.target.value.toLowerCase(), "i").exec(title);
     });
+    setNotBookmarksFilteredNotes(filteredNotes);
+    setBookmarksFilteredNotes([]);
+  };
 
-    setFilteredNotes(filteredNotes);
+  const bookmarkSearchHandler = (e) => {
+    setSearch(e.target.value);
+
+    const filteredNotes = bookmarks.filter((note) => {
+      const title = note.title.toLowerCase();
+      return new RegExp(e.target.value.toLowerCase(), "i").exec(title);
+    });
+    setBookmarksFilteredNotes(filteredNotes);
+    setNotBookmarksFilteredNotes([]);
   };
 
   return (
@@ -92,8 +111,8 @@ const Notes = () => {
             <Dashboard
               notes={notBookmarks}
               search={search}
-              filteredNotes={filteredNotes}
-              searchHandler={searchHandler}
+              filteredNotes={notBookmarksFilteredNotes}
+              searchHandler={notBookmarkSearchHandler}
               formattedData={showFormattedDate}
               deleteNoteHandler={deleteNoteHandler}
               bookmarksHandler={bookmarksHandler}
@@ -118,6 +137,9 @@ const Notes = () => {
           element={
             <Bookmarks
               notes={bookmarks}
+              search={search}
+              filteredNotes={bookmarksFilteredNotes}
+              searchHandler={bookmarkSearchHandler}
               formattedData={showFormattedDate}
               deleteNoteHandler={deleteNoteHandler}
               bookmarksHandler={bookmarksHandler}

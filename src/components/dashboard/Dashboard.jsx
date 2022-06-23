@@ -11,7 +11,7 @@ const Dashboard = ({
   deleteNoteHandler,
   bookmarksHandler,
 }) => {
-  document.title = "Notes | Bookmarks";
+  document.title = "Notes | Dashboard";
   return (
     <div className="container">
       <h1 className="dashboard-title mb-5">Dashboard</h1>
@@ -21,14 +21,11 @@ const Dashboard = ({
             <input
               type="text"
               className="form-control mb-2"
-              id="add-title dashboard-search"
+              id="dashboard-search"
               autoComplete="off"
               value={search}
               onChange={searchHandler}
             />
-            {/* <button type="submit" className="btn btn-primary">
-              Search
-            </button> */}
           </form>
         </div>
       </div>

@@ -14,7 +14,8 @@ const Notes = () => {
   const [bookmarks, setBookmarks] = useState(
     notes.filter((note) => note.archived === true)
   );
-
+  const [filteredNotes, setFilteredNotes] = useState([]);
+  const [search, setSearch] = useState("");
   const [titleInput, setTitleInput] = useState("");
   const [bodyInput, setBodyInput] = useState("");
   const [status, setStatus] = useState(0);
@@ -29,7 +30,7 @@ const Notes = () => {
         archived: false,
         createdAt: Date.now(),
       };
-      setNotBookmarks([...notes, newNote]);
+      setNotBookmarks([...notBookmarks, newNote]);
       setStatus(1);
     } else setStatus(-1);
 
@@ -47,8 +48,12 @@ const Notes = () => {
   };
 
   const deleteNoteHandler = (id, isArchived) => {
-    if (isArchived) setBookmarks(bookmarks.filter((note) => note.id !== id));
-    else setNotBookmarks(notBookmarks.filter((note) => note.id !== id));
+    if (isArchived) {
+      setBookmarks(bookmarks.filter((note) => note.id !== id));
+    } else {
+      setNotBookmarks(notBookmarks.filter((note) => note.id !== id));
+      setFilteredNotes([]);
+    }
   };
 
   const bookmarksHandler = (id, isArchived) => {
@@ -67,6 +72,16 @@ const Notes = () => {
     }
   };
 
+  const searchHandler = (e) => {
+    setSearch(e.target.value);
+    const filteredNotes = notBookmarks.filter((note) => {
+      const title = note.title.toLowerCase();
+      return new RegExp(e.target.value.toLowerCase(), "i").exec(title);
+    });
+
+    setFilteredNotes(filteredNotes);
+  };
+
   return (
     <>
       <Nav />
@@ -76,6 +91,9 @@ const Notes = () => {
           element={
             <Dashboard
               notes={notBookmarks}
+              search={search}
+              filteredNotes={filteredNotes}
+              searchHandler={searchHandler}
               formattedData={showFormattedDate}
               deleteNoteHandler={deleteNoteHandler}
               bookmarksHandler={bookmarksHandler}

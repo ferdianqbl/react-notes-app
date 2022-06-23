@@ -12,6 +12,21 @@ const Bookmarks = ({
   return (
     <div className="container">
       <h1 className="dashboard-title mb-5">Dashboard</h1>
+      <div className="row align-items-center justify-content-center mb-5">
+        <div className="col-md-5">
+          <form>
+            <input
+              type="text"
+              className="form-control mb-2"
+              id="add-title"
+              autoComplete="off"
+            />
+            <button type="submit" className="btn btn-primary">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
       {notes.length > 0 ? (
         notes.map((note) => (
           <div

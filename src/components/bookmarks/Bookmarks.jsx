@@ -37,7 +37,7 @@ const Bookmarks = ({
             >
               <div className="col-md-3">
                 <img
-                  src="images/nonBookmark.jpg"
+                  src="images/bookmark.jpg"
                   alt="note-img"
                   className="img-fluid"
                 />
@@ -76,7 +76,7 @@ const Bookmarks = ({
             >
               <div className="col-md-3">
                 <img
-                  src="images/nonBookmark.jpg"
+                  src="images/bookmark.jpg"
                   alt="note-img"
                   className="img-fluid"
                 />

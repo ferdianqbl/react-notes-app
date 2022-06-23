@@ -1,14 +1,14 @@
-import "./Dashboard.css";
+import "./Bookmarks.css";
 import DeleteBtn from "./note-delete-btn.svg";
 import BookmarkBtn from "./note-bookmark-btn.svg";
 
-const Dashboard = ({
+const Bookmarks = ({
   notes,
   formattedData,
   deleteNoteHandler,
   bookmarksHandler,
 }) => {
-  document.title = "Notes | Dashboard";
+  document.title = "Notes | Bookmarks";
   return (
     <div className="container">
       <h1 className="dashboard-title mb-5">Dashboard</h1>
@@ -65,4 +65,4 @@ const Dashboard = ({
   );
 };
 
-export default Dashboard;
+export default Bookmarks;

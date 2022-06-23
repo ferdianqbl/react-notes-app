@@ -1,13 +1,20 @@
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { getInitialData, showFormattedDate } from "../utils/dashboardData";
 import Nav from "./nav/Nav";
 import AddNotes from "./addNotes/AddNotes";
 import Dashboard from "./dashboard/Dashboard";
-import { getInitialData, showFormattedDate } from "../utils/dashboardData";
-import { useState } from "react";
-import Bookmark from "./bookmark/Bookmark";
+import Bookmarks from "./bookmarks/Bookmarks";
 
 const Notes = () => {
-  const [notes, setNotes] = useState(getInitialData());
+  const notes = getInitialData();
+  const [notBookmarks, setNotBookmarks] = useState(
+    notes.filter((note) => note.archived === false)
+  );
+  const [bookmarks, setBookmarks] = useState(
+    notes.filter((note) => note.archived === true)
+  );
+
   const [titleInput, setTitleInput] = useState("");
   const [bodyInput, setBodyInput] = useState("");
   const [status, setStatus] = useState(0);
@@ -22,7 +29,7 @@ const Notes = () => {
         archived: false,
         createdAt: Date.now(),
       };
-      setNotes([...notes, newNote]);
+      setNotBookmarks([...notes, newNote]);
       setStatus(1);
     } else setStatus(-1);
 
@@ -39,8 +46,25 @@ const Notes = () => {
     else if (e.target.id === "add-body") setBodyInput(e.target.value);
   };
 
-  const deleteNoteHandler = (id) => {
-    setNotes(notes.filter((note) => note.id !== id));
+  const deleteNoteHandler = (id, isArchived) => {
+    if (isArchived) setBookmarks(bookmarks.filter((note) => note.id !== id));
+    else setNotBookmarks(notBookmarks.filter((note) => note.id !== id));
+  };
+
+  const bookmarksHandler = (id, isArchived) => {
+    if (isArchived) {
+      const note = bookmarks.find((note) => note.id === id);
+      note.archived = false;
+
+      setBookmarks(bookmarks.filter((note) => note.id !== id));
+      setNotBookmarks([...notBookmarks, note]);
+    } else {
+      const note = notBookmarks.find((note) => note.id === id);
+      note.archived = true;
+
+      setNotBookmarks(notBookmarks.filter((note) => note.id !== id));
+      setBookmarks([...bookmarks, note]);
+    }
   };
 
   return (
@@ -51,9 +75,10 @@ const Notes = () => {
           path="/dashboard"
           element={
             <Dashboard
-              notes={notes}
+              notes={notBookmarks}
               formattedData={showFormattedDate}
               deleteNoteHandler={deleteNoteHandler}
+              bookmarksHandler={bookmarksHandler}
             />
           }
         />
@@ -70,7 +95,17 @@ const Notes = () => {
             />
           }
         />
-        <Route path="bookmark" element={<Bookmark />} />
+        <Route
+          path="bookmark"
+          element={
+            <Bookmarks
+              notes={bookmarks}
+              formattedData={showFormattedDate}
+              deleteNoteHandler={deleteNoteHandler}
+              bookmarksHandler={bookmarksHandler}
+            />
+          }
+        />
       </Routes>
     </>
   );

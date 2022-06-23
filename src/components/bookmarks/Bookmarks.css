@@ -1,0 +1,27 @@
+.dashboard-title {
+  margin-top: 8rem;
+  text-align: center;
+}
+
+.dashboard-card__note-body,
+.dashboard-card__note-title,
+.dashboard-card__note-date {
+  font-size: 1rem;
+  line-height: 170%;
+  text-align: justify;
+}
+
+.dashboard-card__note-title {
+  font-weight: 500;
+  color: #152C5B;
+}
+
+.dashboard-card__note-date {
+  font-weight: 300;
+  color: #B0B0B0;
+}
+
+.dashboard-card__note-body {
+  font-weight: 400;
+  color: #9C9C9C;
+}

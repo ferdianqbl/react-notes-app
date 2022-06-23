@@ -4,6 +4,7 @@ import AddNotes from "./addNotes/AddNotes";
 import Dashboard from "./dashboard/Dashboard";
 import { getInitialData, showFormattedDate } from "../utils/dashboardData";
 import { useState } from "react";
+import Bookmark from "./bookmark/Bookmark";
 
 const Notes = () => {
   const [notes, setNotes] = useState(getInitialData());
@@ -69,6 +70,7 @@ const Notes = () => {
             />
           }
         />
+        <Route path="bookmark" element={<Bookmark />} />
       </Routes>
     </>
   );

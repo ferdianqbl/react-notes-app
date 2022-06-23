@@ -3,6 +3,7 @@ import HomeButton from "./HomeButton";
 import "./styles.css";
 
 const Home = () => {
+  document.title = "Notes | Home";
   return (
     <div className="container home">
       <div className="row justify-content-center align-items-center">

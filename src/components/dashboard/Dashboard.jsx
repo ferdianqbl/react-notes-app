@@ -37,7 +37,7 @@ const Dashboard = ({
             >
               <div className="col-md-3">
                 <img
-                  src={process.env.PUBLIC_URL + "images/nonBookmark.jpg"}
+                  src={process.env.PUBLIC_URL + "/images/nonBookmark.jpg"}
                   alt="note-img"
                   className="img-fluid rounded-circle"
                 />
@@ -76,7 +76,7 @@ const Dashboard = ({
             >
               <div className="col-md-3">
                 <img
-                  src={process.env.PUBLIC_URL + "images/nonBookmark.jpg"}
+                  src={process.env.PUBLIC_URL + "/images/nonBookmark.jpg"}
                   alt="note-img"
                   className="img-fluid rounded-circle"
                 />

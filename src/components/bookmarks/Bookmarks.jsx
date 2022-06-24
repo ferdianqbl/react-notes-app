@@ -37,7 +37,7 @@ const Bookmarks = ({
             >
               <div className="col-md-3">
                 <img
-                  src={process.env.PUBLIC_URL + "images/bookmark.jpg"}
+                  src={process.env.PUBLIC_URL + "/images/bookmark.jpg"}
                   alt="note-img"
                   className="img-fluid rounded-circle"
                 />
@@ -76,7 +76,7 @@ const Bookmarks = ({
             >
               <div className="col-md-3">
                 <img
-                  src={process.env.PUBLIC_URL + "images/bookmark.jpg"}
+                  src={process.env.PUBLIC_URL + "/images/bookmark.jpg"}
                   alt="note-img"
                   className="img-fluid rounded-circle"
                 />

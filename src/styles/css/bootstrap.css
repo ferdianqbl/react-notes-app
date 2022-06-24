@@ -12195,4 +12195,9 @@ fieldset:disabled .btn {
   }
 }
 
+.note-delete-btn:hover,
+.note-bookmarks-btn:hover {
+  filter: opacity(0.8);
+}
+
 /*# sourceMappingURL=bootstrap.css.map */

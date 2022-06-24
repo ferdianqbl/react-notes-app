@@ -18,7 +18,8 @@ const Notes = () => {
     []
   );
   const [bookmarksFilteredNotes, setBookmarksFilteredNotes] = useState([]);
-  const [search, setSearch] = useState("");
+  const [notBookmarkSearch, setNotBookmarkSearch] = useState("");
+  const [bookmarkSearch, setBookmarkSearch] = useState("");
   const [titleInput, setTitleInput] = useState("");
   const [bodyInput, setBodyInput] = useState("");
   const [status, setStatus] = useState(0);
@@ -80,7 +81,8 @@ const Notes = () => {
   };
 
   const notBookmarkSearchHandler = (e) => {
-    setSearch(e.target.value);
+    setNotBookmarkSearch(e.target.value);
+    setBookmarkSearch("");
 
     const filteredNotes = notBookmarks.filter((note) => {
       const title = note.title.toLowerCase();
@@ -91,7 +93,8 @@ const Notes = () => {
   };
 
   const bookmarkSearchHandler = (e) => {
-    setSearch(e.target.value);
+    setBookmarkSearch(e.target.value);
+    setNotBookmarkSearch("");
 
     const filteredNotes = bookmarks.filter((note) => {
       const title = note.title.toLowerCase();
@@ -110,7 +113,7 @@ const Notes = () => {
           element={
             <Dashboard
               notes={notBookmarks}
-              search={search}
+              search={notBookmarkSearch}
               filteredNotes={notBookmarksFilteredNotes}
               searchHandler={notBookmarkSearchHandler}
               formattedData={showFormattedDate}
@@ -137,7 +140,7 @@ const Notes = () => {
           element={
             <Bookmarks
               notes={bookmarks}
-              search={search}
+              search={bookmarkSearch}
               filteredNotes={bookmarksFilteredNotes}
               searchHandler={bookmarkSearchHandler}
               formattedData={showFormattedDate}

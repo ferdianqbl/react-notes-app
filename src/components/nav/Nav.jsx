@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import navData from "../../utils/navData";
+import Logo from "./NoteIO.svg";
 
 const Nav = () => {
   const [activeLink, setActiveLink] = useState(1);
@@ -22,8 +23,8 @@ const Nav = () => {
       id="my-navbar"
     >
       <div className="container">
-        <Link className="navbar-brand" to="/">
-          Navbar
+        <Link className="navbar-brand img-fluid" to="/">
+          <img src={Logo} alt="logo" />
         </Link>
         <button
           className="navbar-toggler"

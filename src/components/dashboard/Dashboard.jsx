@@ -39,7 +39,7 @@ const Dashboard = ({
                 <img
                   src="images/nonBookmark.jpg"
                   alt="note-img"
-                  className="img-fluid"
+                  className="img-fluid rounded-circle"
                 />
               </div>
               <div className="col-md-7 py-3 align-self-start">
@@ -78,7 +78,7 @@ const Dashboard = ({
                 <img
                   src="images/nonBookmark.jpg"
                   alt="note-img"
-                  className="img-fluid"
+                  className="img-fluid rounded-circle"
                 />
               </div>
               <div className="col-md-7 py-3 align-self-start">

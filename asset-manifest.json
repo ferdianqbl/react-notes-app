@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/react-notes-app/static/css/main.a5c5f96d.css",
-    "main.js": "/react-notes-app/static/js/main.5fe87a44.js",
+    "main.js": "/react-notes-app/static/js/main.47c4ef40.js",
     "static/media/home-img.svg": "/react-notes-app/static/media/home-img.0ab6c094b3b2362a88a7d7f0f6d6fd5f.svg",
     "static/media/NoteIO.svg": "/react-notes-app/static/media/NoteIO.64eacf067a14e45d9d842b5197dc35b1.svg",
     "static/media/note-bookmark-btn.svg": "/react-notes-app/static/media/note-bookmark-btn.ca278ed5a84dff6cf4adf561ff94d785.svg",
     "static/media/note-delete-btn.svg": "/react-notes-app/static/media/note-delete-btn.0a85408e9e4599049b0484748ac425c4.svg",
     "index.html": "/react-notes-app/index.html",
     "main.a5c5f96d.css.map": "/react-notes-app/static/css/main.a5c5f96d.css.map",
-    "main.5fe87a44.js.map": "/react-notes-app/static/js/main.5fe87a44.js.map"
+    "main.47c4ef40.js.map": "/react-notes-app/static/js/main.47c4ef40.js.map"
   },
   "entrypoints": [
     "static/css/main.a5c5f96d.css",
-    "static/js/main.5fe87a44.js"
+    "static/js/main.47c4ef40.js"
   ]
 }

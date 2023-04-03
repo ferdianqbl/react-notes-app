@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const HomeButton = () => (
   <div className="home-button">
-    <Link to="/dashboard">Start Now</Link>
+    <Link to="/react-notes-app/dashboard">Start Now</Link>
   </div>
 );
 

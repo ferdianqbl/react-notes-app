@@ -2,19 +2,19 @@ const navData = [
   {
     id: 1,
     name: "Dashboard",
-    link: "/dashboard",
+    link: "/react-notes-app/dashboard",
     className: "nav-link",
   },
   {
     id: 2,
     name: "Add",
-    link: "/dashboard/add",
+    link: "/react-notes-app/dashboard/add",
     className: "nav-link",
   },
   {
     id: 3,
     name: "Bookmark",
-    link: "/dashboard/bookmark",
+    link: "/react-notes-app/dashboard/bookmark",
     className: "nav-link",
   },
 ];

@@ -109,7 +109,7 @@ const Notes = () => {
       <Nav />
       <Routes>
         <Route
-          path="/react-notes-app/dashboard"
+          path="/"
           element={
             <Dashboard
               notes={notBookmarks}
@@ -123,7 +123,7 @@ const Notes = () => {
           }
         />
         <Route
-          path="/react-notes-app/dashboard/add"
+          path="add"
           element={
             <AddNotes
               addNoteHandler={addNoteHandler}
@@ -136,7 +136,7 @@ const Notes = () => {
           }
         />
         <Route
-          path="/react-notes-app/dashboard/bookmark"
+          path="bookmark"
           element={
             <Bookmarks
               notes={bookmarks}

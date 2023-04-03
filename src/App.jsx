@@ -8,8 +8,8 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/*" element={<Notes />} />
+        <Route path="/react-notes-app" element={<Home />} />
+        <Route path="/dashboard/*" element={<Notes />} />
       </Routes>
     </>
   );

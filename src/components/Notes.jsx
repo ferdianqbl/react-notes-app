@@ -109,7 +109,7 @@ const Notes = () => {
       <Nav />
       <Routes>
         <Route
-          path="/dashboard"
+          path="/"
           element={
             <Dashboard
               notes={notBookmarks}
@@ -123,7 +123,7 @@ const Notes = () => {
           }
         />
         <Route
-          path="/add"
+          path="add"
           element={
             <AddNotes
               addNoteHandler={addNoteHandler}

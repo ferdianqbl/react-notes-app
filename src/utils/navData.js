@@ -8,13 +8,13 @@ const navData = [
   {
     id: 2,
     name: "Add",
-    link: "/add",
+    link: "/dashboard/add",
     className: "nav-link",
   },
   {
     id: 3,
     name: "Bookmark",
-    link: "/bookmark",
+    link: "/dashboard/bookmark",
     className: "nav-link",
   },
 ];

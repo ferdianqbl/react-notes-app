@@ -1,20 +1,16 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+// import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import "./Navbar.css";
 import navData from "../../utils/navData";
 import Logo from "./NoteIO.svg";
 
 const Nav = () => {
-  const [activeLink, setActiveLink] = useState(1);
+  const routes = useParams();
 
   const toggleHandler = () => {
     document
       .querySelector(".navbar-toggler--nav")
       .classList.toggle("toggler-active");
-  };
-
-  const handleClick = (id) => {
-    setActiveLink(id);
   };
 
   return (
@@ -45,14 +41,13 @@ const Nav = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav m-auto mb-2 mb-lg-0 justify-content-center align-items-center">
             {navData.map((nav) => (
-              <li
-                className="nav-item"
-                key={nav.id}
-                onClick={() => handleClick(nav.id)}
-              >
+              <li className="nav-item" key={nav.id}>
                 <Link
                   className={
-                    nav.className + (nav.id === activeLink ? " active" : "")
+                    nav.className +
+                    (Object.values(routes)[0] === nav.name.toLowerCase()
+                      ? " active"
+                      : "")
                   }
                   to={nav.link}
                 >

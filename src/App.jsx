@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/react-notes-app" element={<Home />} />
         <Route path="/react-notes-app/dashboard/*" element={<Notes />} />
       </Routes>
     </>
